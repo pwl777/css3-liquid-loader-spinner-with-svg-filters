@@ -1,0 +1,99 @@
+/* ------ CSS3 - Liquid Loader Spinner with SVG Filters ------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow: hidden;
+}
+h1 {
+    position: relative;
+    font-family: 'Lemon', cursive;
+    color: #6441a4;
+    filter: drop-shadow(-1px 6px 3px rgba(133, 133, 133, 0.5));
+    font-size: 3.5rem;
+    text-align: center;
+    margin-top: 70px;
+    z-index: 10;
+}
+.loader {
+    position: absolute;
+    display: flex;
+    padding: 100px;
+    align-items: center;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: rotate 20s linear infinite;
+    filter: blur(10px) contrast(15);
+    z-index: 1;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+.particle {
+    background: red;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.particle:first-child,
+.particle:last-child {
+    width: 25px;
+    height: 25px;
+}
+.particle:nth-child(1),
+.particle:nth-child(3),
+.particle:nth-child(5),
+.particle:nth-child(7),
+.particle:nth-child(9) {
+    animation: pulse 1.3s ease-in-out infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1) }
+    50% { transform: scale(1.9) }
+    70% { transform: scale(0.6) }
+    100% { transform: scale(1) }
+}
+.leftSpin {
+    animation: leftSpin 2.5s linear infinite;
+}
+@keyframes leftSpin {
+    from {
+        transform: rotate(0deg) translateX(50px);
+    }
+    to {
+        transform: rotate(360deg) translateX(50px);
+    }
+}
+.rightSpin {
+    animation: rightSpin 2s linear infinite;
+}
+@keyframes rightSpin {
+    from {
+        transform: rotate(360deg) translateX(50px);
+    }
+    to {
+        transform: rotate(0deg) translateX(50px);
+    }
+}
+.particle:nth-child(3) {
+    animation-delay: .25s;
+}
+.particle:nth-child(5) {
+    animation-delay: .75s;
+}
+.particle:nth-child(7) {
+    animation-delay: 1.5s;
+}
+.particle:nth-child(9) {
+    animation-delay: .3s;
+}
